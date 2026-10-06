@@ -1,0 +1,17 @@
+{
+  "name": "claude-limits-checker",
+  "owner": {
+    "name": "Westpoint",
+    "url": "https://github.com/westpoint-io"
+  },
+  "metadata": {
+    "description": "Shows your Claude 5h and 7d limits, and keeps deep research off Fable unless you have usage to spare."
+  },
+  "plugins": [
+    {
+      "name": "limits",
+      "source": "./",
+      "description": "Shows your 5h and 7d limits, and stops deep research from running on Fable unless your 5h window is about to reset and your weekly usage is low."
+    }
+  ]
+}

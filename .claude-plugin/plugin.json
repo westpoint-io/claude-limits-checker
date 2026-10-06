@@ -1,0 +1,46 @@
+{
+  "name": "limits",
+  "version": "0.10.0",
+  "description": "Shows your 5h and 7d limits, and stops deep research from running on expensive models unless your 5h window is about to reset and your weekly usage is low.",
+  "author": {
+    "name": "Westpoint",
+    "url": "https://github.com/westpoint-io"
+  },
+  "license": "MIT",
+  "keywords": [
+    "usage",
+    "rate-limit",
+    "model",
+    "fable",
+    "research"
+  ],
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "models": {
+      "type": "string",
+      "title": "Models to watch",
+      "description": "Which models get the deep research check, comma separated: fable, opus.",
+      "default": "fable"
+    },
+    "resetWithinMinutes": {
+      "type": "number",
+      "title": "Let deep research run when the 5h window resets within (minutes)",
+      "description": "Deep research on a watched model runs without asking only if your 5h window resets in less than this many minutes, and your weekly usage is under the limit below.",
+      "default": 30
+    },
+    "weeklyMaxPercent": {
+      "type": "number",
+      "title": "Let deep research run while weekly usage is under (%)",
+      "description": "Deep research on a watched model runs without asking only if your weekly (7d) usage is under this percentage, and the 5h reset condition above holds.",
+      "default": 75
+    },
+    "openOnStart": {
+      "type": "boolean",
+      "title": "Open the limits panel when a session starts",
+      "description": "Shows the settings pane with your limits as soon as a session starts.",
+      "default": true
+    }
+  },
+  "homepage": "https://github.com/westpoint-io/claude-limits-checker",
+  "repository": "https://github.com/westpoint-io/claude-limits-checker"
+}
